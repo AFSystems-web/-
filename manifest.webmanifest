@@ -1,0 +1,10 @@
+{
+  "name": "Павел и Анастасия — свадебное приглашение",
+  "short_name": "Свадьба",
+  "description": "Мобильное свадебное приглашение с деталями торжества, программой дня и RSVP.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f8f3ea",
+  "theme_color": "#f8f3ea",
+  "orientation": "portrait-primary"
+}

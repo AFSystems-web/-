@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Свадебное приглашение Павла и Анастасии: дата, место, программа дня, dress code и подтверждение участия."
+    />
+    <meta name="theme-color" content="#f8f3ea" />
+    <title>Павел & Анастасия — свадебное приглашение</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Marck+Script&family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="invitation-shell" aria-label="Свадебное приглашение">
+      <section class="hero" id="top">
+        <div class="leaf leaf-left" aria-hidden="true"></div>
+        <div class="leaf leaf-right" aria-hidden="true"></div>
+
+        <p class="overline hero-overline">Приглашение на свадьбу</p>
+        <div class="ornament hero-ornament" aria-hidden="true">
+          <span></span>
+          <svg viewBox="0 0 88 24" role="img">
+            <path d="M44 18C36 8 25 6 9 12C24 15 34 17 44 18Z" />
+            <path d="M44 18C52 8 63 6 79 12C64 15 54 17 44 18Z" />
+            <path d="M44 18C44 12 44 7 44 2" />
+          </svg>
+          <span></span>
+        </div>
+        <h1>Павел <span>&</span> Анастасия</h1>
+        <time class="hero-date" datetime="2025-07-25">25.07.2025</time>
+        <p class="hero-text">
+          Мы будем счастливы разделить с вами один из самых важных дней в нашей жизни.
+        </p>
+      </section>
+
+      <section class="photo-section reveal" aria-labelledby="venue-title">
+        <figure class="venue-figure">
+          <img
+            src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=82"
+            alt="Атмосферная свадебная сервировка в светлом зале"
+          />
+        </figure>
+        <article class="venue-card">
+          <p class="overline">Место торжества</p>
+          <h2 id="venue-title">Загородный клуб “Романтика”</h2>
+          <p>Московская область, 25-й км Новорижского шоссе</p>
+        </article>
+      </section>
+
+      <section class="details-section reveal" aria-labelledby="details-title">
+        <div class="section-heading">
+          <p class="overline">Детали</p>
+          <h2 id="details-title">Когда мы ждем вас</h2>
+        </div>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4" y="5" width="16" height="15" rx="2" />
+              <path d="M8 3v4M16 3v4M4 10h16" />
+            </svg>
+            <span>Дата</span>
+            <strong>25 июля 2025</strong>
+          </article>
+          <article class="detail-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 6v6l4 2" />
+              <circle cx="12" cy="12" r="8" />
+            </svg>
+            <span>Сбор гостей</span>
+            <strong>15:30</strong>
+          </article>
+          <article class="detail-card">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 18c3-5 9-5 12 0" />
+              <path d="M8 12c0-3 2-5 4-5s4 2 4 5" />
+              <path d="M12 7V4M9 5l3 2 3-2" />
+            </svg>
+            <span>Церемония</span>
+            <strong>16:00</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="timeline-section reveal" aria-labelledby="program-title">
+        <div class="section-heading">
+          <p class="overline">Программа дня</p>
+          <h2 id="program-title">Нежный ритм вечера</h2>
+        </div>
+        <ol class="timeline">
+          <li>
+            <time>15:30</time>
+            <span>Сбор гостей</span>
+          </li>
+          <li>
+            <time>16:00</time>
+            <span>Церемония</span>
+          </li>
+          <li>
+            <time>17:00</time>
+            <span>Фуршет</span>
+          </li>
+          <li>
+            <time>18:00</time>
+            <span>Ужин</span>
+          </li>
+          <li>
+            <time>20:00</time>
+            <span>Первый танец</span>
+          </li>
+          <li>
+            <time>22:00</time>
+            <span>Торт</span>
+          </li>
+        </ol>
+      </section>
+
+      <section class="dress-section reveal" aria-labelledby="dress-title">
+        <div class="section-heading">
+          <p class="overline">Dress code</p>
+          <h2 id="dress-title">Природная палитра</h2>
+        </div>
+        <p>
+          Мы будем благодарны, если вы поддержите спокойную природную палитру вечера.
+        </p>
+        <div class="palette" aria-label="Цветовая палитра вечера">
+          <span class="swatch swatch-beige" title="Beige"></span>
+          <span class="swatch swatch-sage" title="Sage"></span>
+          <span class="swatch swatch-champagne" title="Champagne"></span>
+          <span class="swatch swatch-rose" title="Dusty rose"></span>
+          <span class="swatch swatch-graphite" title="Graphite"></span>
+        </div>
+      </section>
+
+      <section class="rsvp-section reveal" aria-labelledby="rsvp-title">
+        <p class="overline">RSVP</p>
+        <h2 id="rsvp-title">Подтвердите участие</h2>
+        <p>Пожалуйста, сообщите нам, сможете ли вы быть с нами в этот день.</p>
+        <a class="rsvp-button" href="#" aria-label="Подтвердить участие">Подтвердить участие</a>
+      </section>
+
+      <footer class="footer reveal">
+        <div class="ornament" aria-hidden="true">
+          <span></span>
+          <svg viewBox="0 0 88 24" role="img">
+            <path d="M44 18C36 8 25 6 9 12C24 15 34 17 44 18Z" />
+            <path d="M44 18C52 8 63 6 79 12C64 15 54 17 44 18Z" />
+            <path d="M44 18C44 12 44 7 44 2" />
+          </svg>
+          <span></span>
+        </div>
+        <p>С любовью, Павел и Анастасия</p>
+        <time datetime="2025-07-25">25 июля 2025</time>
+      </footer>
+    </main>
+
+    <!-- Future note: this script area is intentionally simple, so an envelope opening animation can be added later without touching the content sections. -->
+    <script src="app.js"></script>
+  </body>
+</html>
