@@ -21,21 +21,38 @@
   <body class="is-loading">
     <div class="site-loader" aria-label="Загрузка приглашения" aria-live="polite">
       <div class="loader-card">
-        <span class="loader-mark">Н & П</span>
-        <div class="loader-line" aria-hidden="true"><span></span></div>
-        <p>Открываем приглашение</p>
+        <svg class="preloader-botanical" viewBox="0 0 220 68" aria-hidden="true">
+          <path class="loader-branch" d="M28 40C64 22 105 20 190 34" />
+          <path class="loader-leaf loader-leaf-one" d="M74 28C63 17 51 14 39 18C47 29 58 33 74 28Z" />
+          <path class="loader-leaf loader-leaf-two" d="M111 24C105 11 94 5 81 6C87 20 98 27 111 24Z" />
+          <path class="loader-leaf loader-leaf-three" d="M151 28C160 15 172 10 187 13C179 26 166 32 151 28Z" />
+        </svg>
+        <p class="loader-couple">Настя & Паша</p>
+        <p class="loader-caption">приглашение открывается</p>
       </div>
     </div>
 
     <main class="invitation-shell" aria-label="Свадебное приглашение Насти и Паши">
-      <div class="watercolor-frame" aria-hidden="true"></div>
+      <div class="watercolor-frame" aria-hidden="true">
+        <span class="floral-piece floral-top-left"></span>
+        <span class="floral-piece floral-top-right"></span>
+        <span class="floral-piece floral-bottom-left"></span>
+        <span class="floral-piece floral-right-flower"></span>
+        <span class="floral-piece floral-bottom-right"></span>
+      </div>
 
       <section class="hero-screen" id="top">
         <p class="overline hero-kicker">Свадебное приглашение</p>
         <h1 class="couple-names" aria-label="Настя и Паша">
-          <span class="name-line name-first">Настя</span>
+          <svg class="name-svg name-first" viewBox="0 0 440 150" aria-hidden="true">
+            <text class="name-stroke" x="220" y="108" text-anchor="middle">Настя</text>
+            <text class="name-fill" x="220" y="108" text-anchor="middle">Настя</text>
+          </svg>
           <span class="ampersand">&</span>
-          <span class="name-line name-second">Паша</span>
+          <svg class="name-svg name-second" viewBox="0 0 440 150" aria-hidden="true">
+            <text class="name-stroke" x="220" y="108" text-anchor="middle">Паша</text>
+            <text class="name-fill" x="220" y="108" text-anchor="middle">Паша</text>
+          </svg>
         </h1>
 
         <div class="date-lockup" aria-label="9 августа, воскресенье">

@@ -72,25 +72,41 @@ svg {
   place-items: center;
   padding: 1.5rem;
   background:
-    linear-gradient(rgba(251, 246, 237, 0.78), rgba(251, 246, 237, 0.9)),
-    url("assets/watercolor-frame.jpg") center / cover no-repeat,
+    radial-gradient(circle at 50% 42%, rgba(255, 251, 244, 0.98), rgba(251, 246, 237, 0.92) 45%, rgba(234, 222, 205, 0.88)),
     var(--ivory);
   opacity: 1;
+  filter: blur(0);
   transition:
     opacity 700ms ease,
+    filter 700ms ease,
     visibility 700ms ease;
 }
 
+.site-loader::before,
 .site-loader::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 50% 50%, rgba(255, 251, 244, 0.12), rgba(255, 251, 244, 0.74));
+}
+
+.site-loader::before {
+  opacity: 0.32;
+  background-image:
+    linear-gradient(rgba(81, 67, 48, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(81, 67, 48, 0.025) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.site-loader::after {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(112, 136, 114, 0.12), transparent 12rem),
+    radial-gradient(circle at 85% 86%, rgba(199, 146, 58, 0.12), transparent 12rem);
 }
 
 body.site-ready .site-loader {
   opacity: 0;
+  filter: blur(9px);
   visibility: hidden;
 }
 
@@ -99,50 +115,73 @@ body.site-ready .site-loader {
   z-index: 1;
   display: grid;
   justify-items: center;
-  min-width: 15rem;
-  padding: 2rem 1.4rem;
-  border: 1px solid rgba(199, 146, 58, 0.28);
-  border-radius: 28px;
-  background: rgba(255, 251, 244, 0.84);
-  box-shadow: var(--shadow);
+  width: min(100%, 20rem);
+  padding: 1.4rem 1rem;
   text-align: center;
-  backdrop-filter: blur(10px);
-  transform: translateY(12px) scale(0.97);
-  animation: loaderIn 800ms cubic-bezier(0.2, 0.85, 0.2, 1) forwards;
+  transform: translateY(10px);
+  animation: loaderIn 760ms cubic-bezier(0.2, 0.85, 0.2, 1) forwards;
 }
 
-.loader-mark {
+.preloader-botanical {
+  width: 13.4rem;
+  height: auto;
+  color: var(--gold);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.loader-branch {
+  stroke-width: 1.25;
+  stroke-dasharray: 190;
+  stroke-dashoffset: 190;
+  animation: loaderBranchDraw 860ms 180ms ease-out forwards;
+}
+
+.loader-leaf {
+  fill: rgba(112, 136, 114, 0.34);
+  stroke: rgba(51, 67, 50, 0.58);
+  stroke-width: 0.9;
+  opacity: 0;
+  transform: scale(0.84);
+  transform-origin: center;
+  animation: loaderLeafBloom 520ms ease-out forwards;
+}
+
+.loader-leaf-one {
+  animation-delay: 560ms;
+}
+
+.loader-leaf-two {
+  animation-delay: 720ms;
+}
+
+.loader-leaf-three {
+  animation-delay: 880ms;
+}
+
+.loader-couple {
+  margin: 0.55rem 0 0;
   color: var(--green);
   font-family: var(--font-script);
-  font-size: 3.2rem;
-  line-height: 0.9;
+  font-size: 3.3rem;
+  line-height: 0.95;
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  animation: loaderTextIn 620ms 1120ms ease-out forwards;
 }
 
-.loader-line {
-  position: relative;
-  width: 9.5rem;
-  height: 1px;
-  margin: 1rem 0 0.75rem;
-  overflow: hidden;
-  background: rgba(199, 146, 58, 0.2);
-}
-
-.loader-line span {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  transform: translateX(-100%);
-  animation: loaderLine 1250ms ease-in-out infinite;
-}
-
-.loader-card p {
+.loader-caption {
   margin: 0;
   color: var(--muted);
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(6px);
+  animation: loaderTextIn 560ms 1360ms ease-out forwards;
 }
 
 .invitation-shell {
@@ -162,16 +201,72 @@ body.site-ready .site-loader {
   inset: 0 0 auto;
   z-index: 0;
   height: min(1000px, 118svh);
+  overflow: hidden;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(255, 251, 244, 0.08), rgba(255, 251, 244, 0.26) 68%, rgba(251, 246, 237, 0.9)),
-    url("assets/watercolor-frame.jpg") center top / cover no-repeat;
+    radial-gradient(circle at 52% 44%, rgba(255, 251, 244, 0.54), rgba(255, 251, 244, 0.18) 36rem),
+    linear-gradient(180deg, rgba(255, 251, 244, 0.08), rgba(255, 251, 244, 0.2) 68%, rgba(251, 246, 237, 0.92));
   opacity: 0;
   transform: scale(1.025);
 }
 
 body.site-ready .watercolor-frame {
-  animation: watercolorReveal 1200ms 120ms ease-out forwards, floralDrift 15s 1500ms ease-in-out infinite alternate;
+  animation: watercolorReveal 1100ms 80ms ease-out forwards;
+}
+
+.floral-piece {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 251, 244, 0.04), rgba(255, 251, 244, 0.18)),
+    url("assets/watercolor-frame.jpg") center top / cover no-repeat;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.floral-top-left {
+  clip-path: polygon(0 0, 40% 0, 34% 34%, 0 45%);
+  transform: translate(-18px, -12px) scale(0.965);
+}
+
+.floral-top-right {
+  clip-path: polygon(72% 0, 100% 0, 100% 28%, 77% 24%);
+  transform: translate(14px, -14px) scale(0.97);
+}
+
+.floral-bottom-left {
+  clip-path: polygon(0 66%, 48% 66%, 58% 100%, 0 100%);
+  transform: translate(-14px, 18px) scale(0.965);
+}
+
+.floral-right-flower {
+  clip-path: polygon(66% 29%, 100% 24%, 100% 77%, 64% 77%);
+  transform: translate(18px, 8px) scale(0.965);
+}
+
+.floral-bottom-right {
+  clip-path: polygon(58% 63%, 100% 59%, 100% 100%, 58% 100%);
+  transform: translate(18px, 18px) scale(0.965);
+}
+
+body.site-ready .floral-top-left {
+  animation: floralInTopLeft 900ms 320ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloatA 7s 2500ms ease-in-out infinite alternate;
+}
+
+body.site-ready .floral-top-right {
+  animation: floralInTopRight 900ms 480ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloatB 7.5s 2600ms ease-in-out infinite alternate;
+}
+
+body.site-ready .floral-bottom-left {
+  animation: floralInBottomLeft 940ms 640ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloatB 8s 2800ms ease-in-out infinite alternate;
+}
+
+body.site-ready .floral-right-flower {
+  animation: floralInRight 940ms 800ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloatA 8.4s 3000ms ease-in-out infinite alternate;
+}
+
+body.site-ready .floral-bottom-right {
+  animation: floralInBottomRight 940ms 960ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloatA 7.8s 3200ms ease-in-out infinite alternate;
 }
 
 section,
@@ -205,25 +300,58 @@ footer {
 }
 
 .couple-names {
-  width: min(100%, 22rem);
-  margin: 1.25rem auto 1.55rem;
+  display: grid;
+  justify-items: center;
+  width: min(100%, 23rem);
+  margin: 1.15rem auto 1.35rem;
   color: var(--green);
   font-family: var(--font-script);
-  font-size: clamp(5.1rem, 23vw, 7.15rem);
   font-weight: 400;
-  line-height: 0.82;
+  line-height: 1;
   text-align: center;
 }
 
-.name-line {
+.name-svg {
   display: block;
+  width: min(100%, 23rem);
+  height: auto;
+  overflow: visible;
+}
+
+.name-first {
+  margin-bottom: -0.8rem;
+}
+
+.name-second {
+  margin-top: -0.68rem;
+}
+
+.name-svg text {
+  font-family: var(--font-script);
+  font-size: 118px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.name-stroke {
+  fill: transparent;
+  stroke: var(--green);
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 980;
+  stroke-dashoffset: 980;
+  filter: blur(0.35px);
+}
+
+.name-fill {
+  fill: var(--green);
   opacity: 0;
-  transform: translateY(16px) scale(0.985);
 }
 
 .ampersand {
   display: block;
-  margin: 0.36rem 0 0.42rem;
+  margin: -0.16rem 0 0.08rem;
   color: rgba(82, 111, 83, 0.82);
   font-family: var(--font-serif);
   font-size: 2.45rem;
@@ -239,6 +367,7 @@ footer {
   margin-top: 0.1rem;
   color: var(--green);
   opacity: 0;
+  transform: translateY(14px);
 }
 
 .date-lockup span {
@@ -287,6 +416,7 @@ footer {
   font-size: 1.3rem;
   line-height: 1.32;
   opacity: 0;
+  transform: translateY(14px);
 }
 
 .welcome-time {
@@ -295,6 +425,7 @@ footer {
   margin-top: 1.4rem;
   color: var(--green);
   opacity: 0;
+  transform: translateY(14px);
 }
 
 .welcome-time strong {
@@ -345,6 +476,7 @@ footer {
 .hero-screen .primary-button {
   margin-top: 1.55rem;
   opacity: 0;
+  transform: translateY(14px);
 }
 
 .primary-button:hover,
@@ -370,35 +502,43 @@ textarea:focus-visible {
 }
 
 body.site-ready .hero-kicker {
-  animation: softRise 760ms 180ms ease-out forwards;
+  animation: softRise 680ms 1120ms ease-out forwards;
 }
 
-body.site-ready .name-first {
-  animation: nameReveal 1000ms 440ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+body.site-ready .name-first .name-stroke {
+  animation: drawName 1250ms 1360ms cubic-bezier(0.34, 0.02, 0.14, 1) forwards;
+}
+
+body.site-ready .name-first .name-fill {
+  animation: fillName 520ms 2380ms ease-out forwards, nameGlimmer 820ms 2480ms ease-out forwards;
 }
 
 body.site-ready .ampersand {
-  animation: softRise 620ms 980ms ease-out forwards;
+  animation: softRise 460ms 2570ms ease-out forwards;
 }
 
-body.site-ready .name-second {
-  animation: nameReveal 1000ms 1230ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+body.site-ready .name-second .name-stroke {
+  animation: drawName 1250ms 2920ms cubic-bezier(0.34, 0.02, 0.14, 1) forwards;
+}
+
+body.site-ready .name-second .name-fill {
+  animation: fillName 520ms 3940ms ease-out forwards, nameGlimmer 820ms 4040ms ease-out forwards;
 }
 
 body.site-ready .date-lockup {
-  animation: softRise 820ms 1720ms ease-out forwards;
+  animation: softRise 760ms 4240ms ease-out forwards;
 }
 
 body.site-ready .hero-copy {
-  animation: softRise 760ms 1980ms ease-out forwards;
+  animation: softRise 700ms 4480ms ease-out forwards;
 }
 
 body.site-ready .welcome-time {
-  animation: softRise 760ms 2150ms ease-out forwards;
+  animation: softRise 700ms 4640ms ease-out forwards;
 }
 
 body.site-ready .hero-screen .primary-button {
-  animation: softRise 760ms 2340ms ease-out forwards;
+  animation: softRise 700ms 4820ms ease-out forwards;
 }
 
 .date-section,
@@ -785,13 +925,27 @@ h2 {
 
 @keyframes loaderIn {
   to {
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
-@keyframes loaderLine {
+@keyframes loaderBranchDraw {
   to {
-    transform: translateX(100%);
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes loaderLeafBloom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes loaderTextIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -802,13 +956,62 @@ h2 {
   }
 }
 
-@keyframes floralDrift {
+@keyframes floralInTopLeft {
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes floralInTopRight {
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes floralInBottomLeft {
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes floralInRight {
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes floralInBottomRight {
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes floralFloatA {
   from {
+    opacity: 1;
     transform: translate3d(0, 0, 0) scale(1);
   }
 
   to {
-    transform: translate3d(0, -10px, 0) scale(1.012);
+    opacity: 1;
+    transform: translate3d(0, -3px, 0) scale(1.004);
+  }
+}
+
+@keyframes floralFloatB {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 3px, 0) scale(1.004);
   }
 }
 
@@ -819,10 +1022,27 @@ h2 {
   }
 }
 
-@keyframes nameReveal {
+@keyframes drawName {
+  to {
+    stroke-dashoffset: 0;
+    filter: blur(0);
+  }
+}
+
+@keyframes fillName {
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes nameGlimmer {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 rgba(199, 146, 58, 0));
+  }
+
+  48% {
+    filter: drop-shadow(0 0 7px rgba(199, 146, 58, 0.22));
   }
 }
 
@@ -885,8 +1105,8 @@ h2 {
   }
 
   .watercolor-frame,
+  .floral-piece,
   .hero-kicker,
-  .name-line,
   .ampersand,
   .date-lockup,
   .hero-copy,
@@ -895,5 +1115,14 @@ h2 {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .name-stroke {
+    stroke-dashoffset: 0;
+    filter: none;
+  }
+
+  .name-fill {
+    opacity: 1;
   }
 }

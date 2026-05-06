@@ -8,17 +8,29 @@ const modalFormView = document.querySelector("#modalFormView");
 const modalSuccess = document.querySelector("#modalSuccess");
 const formError = document.querySelector("#formError");
 const submitButton = rsvpForm?.querySelector(".submit-button");
-const loaderMinimumMs = 1150;
+const loaderMinimumMs = 2150;
+const loaderMaximumMs = 3000;
 const loaderStartedAt = Date.now();
+let loaderFinished = false;
 
 window.addEventListener("load", () => {
-  const wait = Math.max(0, loaderMinimumMs - (Date.now() - loaderStartedAt));
-
-  window.setTimeout(() => {
-    body.classList.remove("is-loading");
-    body.classList.add("site-ready");
-  }, wait);
+  schedulePreloaderFinish();
 });
+
+const loaderFallbackTimer = window.setTimeout(finishPreloader, loaderMaximumMs);
+
+function schedulePreloaderFinish() {
+  const wait = Math.max(0, loaderMinimumMs - (Date.now() - loaderStartedAt));
+  window.setTimeout(finishPreloader, wait);
+}
+
+function finishPreloader() {
+  if (loaderFinished) return;
+  loaderFinished = true;
+  window.clearTimeout(loaderFallbackTimer);
+  body.classList.remove("is-loading");
+  body.classList.add("site-ready");
+}
 
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
