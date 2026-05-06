@@ -1,15 +1,16 @@
 # Свадебное приглашение
 
-Mobile-first сайт-приглашение для Павла и Анастасии.
+Mobile-first digital wedding invitation для Насти и Паши.
 
 ## Что внутри
 
 - Статический HTML/CSS/JavaScript без сборки и React.
-- Мобильный макет, оптимизированный под iPhone.
-- Десктопная версия центрирует сайт как аккуратный мобильный экран.
-- Google Fonts: Cormorant Garamond, Great Vibes, Montserrat.
-- Легкие появления hero-текста и секций через IntersectionObserver.
-- Временное изображение места торжества с Unsplash.
+- Акварельный botanical background из локального оптимизированного asset.
+- Hero screen с именами, датой, днем недели и CTA.
+- Красивый свадебный таймлайн.
+- Собственная RSVP-модалка без перехода на Google Form.
+- Demo-mode для RSVP, пока Google Apps Script endpoint не подключен.
+- Поддержка `prefers-reduced-motion`.
 
 ## Запуск локально
 
@@ -22,3 +23,7 @@ python3 -m http.server 5173
 ```text
 http://localhost:5173
 ```
+
+## Подключение RSVP
+
+Инструкция для Google Sheets лежит в [RSVP_SETUP.md](./RSVP_SETUP.md).

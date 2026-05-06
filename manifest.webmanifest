@@ -1,10 +1,10 @@
 {
-  "name": "Павел и Анастасия — свадебное приглашение",
-  "short_name": "Свадьба",
-  "description": "Мобильное свадебное приглашение с деталями торжества, программой дня и RSVP.",
+  "name": "Настя и Паша — свадебное приглашение",
+  "short_name": "Настя & Паша",
+  "description": "Мобильное свадебное приглашение с расписанием, местом проведения и RSVP.",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f8f3ea",
-  "theme_color": "#f8f3ea",
+  "background_color": "#fbf6ed",
+  "theme_color": "#fbf6ed",
   "orientation": "portrait-primary"
 }
