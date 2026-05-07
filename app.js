@@ -8,6 +8,7 @@ const modalFormView = document.querySelector("#modalFormView");
 const modalSuccess = document.querySelector("#modalSuccess");
 const formError = document.querySelector("#formError");
 const submitButton = rsvpForm?.querySelector(".submit-button");
+const mapLinks = document.querySelectorAll("[data-map-link]");
 const loaderMinimumMs = 2150;
 const loaderMaximumMs = 3000;
 const loaderStartedAt = Date.now();
@@ -58,6 +59,10 @@ document.querySelectorAll("[data-open-rsvp]").forEach((button) => {
 
 document.querySelectorAll("[data-close-rsvp]").forEach((button) => {
   button.addEventListener("click", closeRsvpDialog);
+});
+
+mapLinks.forEach((link) => {
+  link.addEventListener("click", openMapLink);
 });
 
 rsvpDialog?.addEventListener("click", (event) => {
@@ -117,6 +122,36 @@ function resetRsvpDialog() {
   modalFormView.hidden = false;
   rsvpForm.reset();
   setSubmitState(false);
+}
+
+function openMapLink(event) {
+  const link = event.currentTarget;
+  const appHref = link.dataset.appHref;
+  const webHref = link.href;
+
+  if (!appHref || !webHref) return;
+
+  event.preventDefault();
+
+  let fallbackTimer;
+  const clearFallback = () => {
+    window.clearTimeout(fallbackTimer);
+    document.removeEventListener("visibilitychange", handleVisibilityChange);
+    window.removeEventListener("pagehide", clearFallback);
+  };
+  const handleVisibilityChange = () => {
+    if (document.hidden) clearFallback();
+  };
+
+  document.addEventListener("visibilitychange", handleVisibilityChange);
+  window.addEventListener("pagehide", clearFallback, { once: true });
+
+  fallbackTimer = window.setTimeout(() => {
+    clearFallback();
+    window.location.href = webHref;
+  }, 900);
+
+  window.location.href = appHref;
 }
 
 function setSubmitState(isLoading) {

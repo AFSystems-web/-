@@ -7,12 +7,12 @@
       name="description"
       content="Свадебное приглашение Насти и Паши: дата, время, место, расписание и подтверждение участия."
     />
-    <meta name="theme-color" content="#fbf6ed" />
+    <meta name="theme-color" content="#fbf7ef" />
     <title>Настя & Паша — свадебное приглашение</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Marck+Script&family=Montserrat:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="manifest" href="manifest.webmanifest" />
@@ -27,120 +27,235 @@
           <path class="loader-leaf loader-leaf-two" d="M111 24C105 11 94 5 81 6C87 20 98 27 111 24Z" />
           <path class="loader-leaf loader-leaf-three" d="M151 28C160 15 172 10 187 13C179 26 166 32 151 28Z" />
         </svg>
-        <p class="loader-couple">Настя & Паша</p>
+        <p class="loader-couple">Н & П</p>
         <p class="loader-caption">приглашение открывается</p>
       </div>
     </div>
 
     <main class="invitation-shell" aria-label="Свадебное приглашение Насти и Паши">
       <div class="watercolor-frame" aria-hidden="true">
-        <span class="floral-piece floral-top-left"></span>
-        <span class="floral-piece floral-top-right"></span>
-        <span class="floral-piece floral-bottom-left"></span>
-        <span class="floral-piece floral-right-flower"></span>
-        <span class="floral-piece floral-bottom-right"></span>
+        <img class="hero-bg base-bg" src="assets/hero/base-bg.png" alt="" />
+        <img class="floral-piece floral-reference-frame" src="assets/hero/floral-reference-frame-clean2.png" alt="" />
       </div>
 
       <section class="hero-screen" id="top">
-        <p class="overline hero-kicker">Свадебное приглашение</p>
-        <h1 class="couple-names" aria-label="Настя и Паша">
-          <svg class="name-svg name-first" viewBox="0 0 440 150" aria-hidden="true">
-            <text class="name-stroke" x="220" y="108" text-anchor="middle">Настя</text>
-            <text class="name-fill" x="220" y="108" text-anchor="middle">Настя</text>
-          </svg>
-          <span class="ampersand">&</span>
-          <svg class="name-svg name-second" viewBox="0 0 440 150" aria-hidden="true">
-            <text class="name-stroke" x="220" y="108" text-anchor="middle">Паша</text>
-            <text class="name-fill" x="220" y="108" text-anchor="middle">Паша</text>
-          </svg>
-        </h1>
+        <div class="hero-content">
+          <p class="overline hero-kicker">Свадебное приглашение</p>
+          <h1 class="couple-names" aria-label="Настя и Паша">
+            <span class="name-text name-first" aria-hidden="true">Настя</span>
+            <span class="ampersand">&</span>
+            <span class="name-text name-second" aria-hidden="true">Паша</span>
+          </h1>
 
-        <div class="date-lockup" aria-label="9 августа, воскресенье">
-          <span>август</span>
-          <strong>9</strong>
-          <span>воскресенье</span>
-        </div>
+          <div class="date-lockup" aria-label="9 августа, воскресенье">
+            <span class="date-month">Август</span>
+            <div class="date-number-row">
+              <span class="date-line"></span>
+              <strong class="date-number">9</strong>
+              <span class="date-line"></span>
+            </div>
+            <span class="date-weekday">Воскресенье</span>
+          </div>
 
-        <p class="hero-copy">
-          С радостью приглашаем вас разделить с нами этот особенный день.
-        </p>
-
-        <div class="welcome-time">
-          <strong>15:00–16:00</strong>
-          <span>сбор гостей, приветственный фуршет</span>
-        </div>
-
-        <button class="primary-button" type="button" data-open-rsvp>Я буду!</button>
-      </section>
-
-      <section class="date-section reveal" aria-labelledby="date-title">
-        <p class="overline">Дата и время</p>
-        <h2 id="date-title">Ждем вас 9 августа</h2>
-        <div class="date-cards">
-          <article>
-            <span>День недели</span>
-            <strong>Воскресенье</strong>
-          </article>
-          <article>
-            <span>Сбор гостей</span>
+          <div class="welcome-time">
             <strong>15:00–16:00</strong>
-          </article>
-          <article>
-            <span>Начало вечера</span>
-            <strong>Приветственный фуршет</strong>
-          </article>
+            <span>Сбор гостей</span>
+          </div>
         </div>
       </section>
 
-      <section class="timeline-section reveal" aria-labelledby="timeline-title">
-        <p class="overline">Расписание</p>
-        <h2 id="timeline-title">Программа праздника</h2>
-        <ol class="wedding-timeline">
-          <li class="reveal" style="--delay: 0ms">
-            <time>15:00–16:00</time>
-            <span>Сбор гостей, приветственный фуршет</span>
-          </li>
-          <li class="reveal" style="--delay: 80ms">
-            <time>16:00</time>
-            <span>Торжественная церемония</span>
-          </li>
-          <li class="reveal" style="--delay: 160ms">
-            <time>17:00</time>
-            <span>Фотосессия</span>
-          </li>
-          <li class="reveal" style="--delay: 240ms">
-            <time>18:00</time>
-            <span>Ужин</span>
-          </li>
-          <li class="reveal" style="--delay: 320ms">
-            <time>19:00</time>
-            <span>Первый танец</span>
-          </li>
-          <li class="reveal" style="--delay: 400ms">
-            <time>20:00</time>
-            <span>Торт</span>
-          </li>
-          <li class="reveal" style="--delay: 480ms">
-            <time>21:00</time>
-            <span>Танцы</span>
-          </li>
-        </ol>
+      <div class="watercolor-transition" aria-hidden="true"></div>
+
+      <section class="schedule-section" id="schedule" aria-labelledby="schedule-title">
+        <div class="schedule-inner">
+          <p class="schedule-kicker reveal" style="--delay: 0ms">Расписание</p>
+          <h2 class="schedule-title reveal" id="schedule-title" style="--delay: 80ms">Программа праздника</h2>
+
+          <div class="schedule-divider reveal" aria-hidden="true" style="--delay: 160ms">
+            <svg viewBox="0 0 150 28" focusable="false">
+              <path d="M10 15H58" />
+              <path d="M92 15H140" />
+              <path d="M75 15C65 7 55 9 49 18C59 21 69 20 75 15Z" />
+              <path d="M75 15C85 7 95 9 101 18C91 21 81 20 75 15Z" />
+              <path d="M75 15C74 9 77 5 84 3C84 10 81 14 75 15Z" />
+            </svg>
+          </div>
+
+          <div class="schedule-list" aria-label="Расписание свадебного дня">
+            <div class="schedule-row reveal" style="--delay: 240ms">
+              <div class="schedule-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" focusable="false">
+                  <path d="M10 3L6.5 14.5C6 18 8.2 21 12 21S18 18 17.5 14.5L14 3H10Z" />
+                  <path d="M22 3L18.5 14.5C18 18 20.2 21 24 21S30 18 29.5 14.5L26 3H22Z" />
+                  <path d="M12 21V28" />
+                  <path d="M8.5 28H15.5" />
+                  <path d="M24 21V28" />
+                  <path d="M20.5 28H27.5" />
+                  <path d="M7.6 12H16.4" />
+                  <path d="M19.6 12H28.4" />
+                </svg>
+              </div>
+              <time class="schedule-time" datetime="2026-08-09T15:00">15:00–16:00</time>
+              <p class="schedule-event">Сбор гостей,<br />приветственный фуршет</p>
+            </div>
+
+            <div class="schedule-row reveal" style="--delay: 320ms">
+              <div class="schedule-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" focusable="false">
+                  <path d="M12 11C7 11 3.5 14.8 3.5 20S7 29 12 29S20.5 25.2 20.5 20S17 11 12 11Z" />
+                  <path d="M20 11C15 11 11.5 14.8 11.5 20S15 29 20 29S28.5 25.2 28.5 20S25 11 20 11Z" />
+                  <path d="M10 8L13 4L16 8" />
+                  <path d="M8.2 8H17.8" />
+                </svg>
+              </div>
+              <time class="schedule-time" datetime="2026-08-09T16:00">16:00</time>
+              <p class="schedule-event">Торжественная церемония</p>
+            </div>
+
+            <div class="schedule-row reveal" style="--delay: 400ms">
+              <div class="schedule-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" focusable="false">
+                  <path d="M7 10H12L14 7H20L22 10H25C27 10 28.5 11.5 28.5 13.5V23.5C28.5 25.5 27 27 25 27H7C5 27 3.5 25.5 3.5 23.5V13.5C3.5 11.5 5 10 7 10Z" />
+                  <path d="M16 23C18.8 23 21 20.8 21 18S18.8 13 16 13S11 15.2 11 18S13.2 23 16 23Z" />
+                  <path d="M24 14H25" />
+                </svg>
+              </div>
+              <time class="schedule-time" datetime="2026-08-09T17:00">17:00</time>
+              <p class="schedule-event">Фотосессия</p>
+            </div>
+
+            <div class="schedule-row reveal" style="--delay: 480ms">
+              <div class="schedule-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" focusable="false">
+                  <path d="M8 4V14" />
+                  <path d="M12 4V14" />
+                  <path d="M16 4V14" />
+                  <path d="M8 14H16" />
+                  <path d="M12 14V28" />
+                  <path d="M24 4V28" />
+                  <path d="M24 4C20.8 7.8 20.3 13 24 16" />
+                </svg>
+              </div>
+              <time class="schedule-time" datetime="2026-08-09T18:00">18:00</time>
+              <p class="schedule-event">Ужин</p>
+            </div>
+
+            <div class="schedule-row reveal" style="--delay: 560ms">
+              <div class="schedule-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" focusable="false">
+                  <path d="M16 28S5 21.2 5 12.8C5 8.8 7.7 6 11.3 6C13.4 6 15 7.1 16 8.7C17 7.1 18.6 6 20.7 6C24.3 6 27 8.8 27 12.8C27 21.2 16 28 16 28Z" />
+                </svg>
+              </div>
+              <time class="schedule-time" datetime="2026-08-09T19:00">19:00</time>
+              <p class="schedule-event">Первый танец</p>
+            </div>
+
+            <div class="schedule-row reveal" style="--delay: 640ms">
+              <div class="schedule-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" focusable="false">
+                  <path d="M7 15H25V27H7V15Z" />
+                  <path d="M5 27H27" />
+                  <path d="M9 11H23V15H9V11Z" />
+                  <path d="M16 11V7" />
+                  <path d="M16 4.5L18 7L16 9.5L14 7L16 4.5Z" />
+                  <path d="M7 20C10 22 13 18 16 20S22 22 25 20" />
+                </svg>
+              </div>
+              <time class="schedule-time" datetime="2026-08-09T20:00">20:00</time>
+              <p class="schedule-event">Торт</p>
+            </div>
+
+            <div class="schedule-row reveal" style="--delay: 720ms">
+              <div class="schedule-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" focusable="false">
+                  <path d="M12 23.5C12 26 9.7 28 7 28S2 26 2 23.5S4.3 19 7 19S12 21 12 23.5Z" />
+                  <path d="M12 23.5V8L26 5V20.5" />
+                  <path d="M26 20.5C26 23 23.7 25 21 25S16 23 16 20.5S18.3 16 21 16S26 18 26 20.5Z" />
+                  <path d="M12 12L26 9" />
+                </svg>
+              </div>
+              <time class="schedule-time" datetime="2026-08-09T21:00">21:00</time>
+              <p class="schedule-event">Танцы</p>
+            </div>
+          </div>
+
+          <div class="schedule-bottom-branch reveal" aria-hidden="true" style="--delay: 820ms">
+            <svg viewBox="0 0 240 68" focusable="false">
+              <path d="M34 42C70 29 96 26 120 46C144 26 170 29 206 42" />
+              <path d="M62 34C50 25 40 23 29 28C38 38 49 40 62 34Z" />
+              <path d="M83 30C72 18 61 14 49 18C56 31 68 36 83 30Z" />
+              <path d="M105 34C96 21 87 16 75 18C80 32 91 39 105 34Z" />
+              <path d="M135 34C144 21 153 16 165 18C160 32 149 39 135 34Z" />
+              <path d="M157 30C168 18 179 14 191 18C184 31 172 36 157 30Z" />
+              <path d="M178 34C190 25 200 23 211 28C202 38 191 40 178 34Z" />
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <section class="dress-code-section reveal" aria-labelledby="dress-code-title">
+        <p class="overline">Дресс-код</p>
+        <h2 id="dress-code-title">Палитра вечера</h2>
+        <p>
+          Будем рады, если в образах появятся мягкие природные оттенки:
+          айвори, беж, шалфейный, оливковый и мокко.
+        </p>
+        <div class="dress-palette" aria-label="Палитра дресс-кода">
+          <span style="--swatch: #f4f5ef"></span>
+          <span style="--swatch: #e7dac8"></span>
+          <span style="--swatch: #aeb982"></span>
+          <span style="--swatch: #8b965c"></span>
+          <span style="--swatch: #84664f"></span>
+        </div>
       </section>
 
       <section class="place-section reveal" aria-labelledby="place-title">
         <p class="overline">Место проведения</p>
-        <h2 id="place-title">Адрес будет указан здесь</h2>
+        <h2 id="place-title">Солнечный берег</h2>
         <p>
-          Мы добавим точную локацию и детали проезда ближе к дате праздника.
+          Городской округ Мытищи,<br />
+          Александровская улица, 1/3
         </p>
-        <button class="ghost-button" type="button" disabled>Открыть карту</button>
+        <div class="map-links" aria-label="Открыть карту">
+          <a
+            class="ghost-button map-link"
+            href="https://2gis.ru/search/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B1%D0%B5%D1%80%D0%B5%D0%B3%2C%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%201%2F3%2C%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BE%D0%BA%D1%80%D1%83%D0%B3%20%D0%9C%D1%8B%D1%82%D0%B8%D1%89%D0%B8"
+            data-map-link
+            data-app-href="dgis://2gis.ru/search/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B1%D0%B5%D1%80%D0%B5%D0%B3%2C%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%201%2F3%2C%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BE%D0%BA%D1%80%D1%83%D0%B3%20%D0%9C%D1%8B%D1%82%D0%B8%D1%89%D0%B8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            2ГИС
+          </a>
+          <a
+            class="ghost-button map-link"
+            href="https://yandex.ru/maps/?text=%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B1%D0%B5%D1%80%D0%B5%D0%B3%2C%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%201%2F3%2C%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BE%D0%BA%D1%80%D1%83%D0%B3%20%D0%9C%D1%8B%D1%82%D0%B8%D1%89%D0%B8"
+            data-map-link
+            data-app-href="yandexmaps://maps.yandex.ru/?text=%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B1%D0%B5%D1%80%D0%B5%D0%B3%2C%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%201%2F3%2C%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BE%D0%BA%D1%80%D1%83%D0%B3%20%D0%9C%D1%8B%D1%82%D0%B8%D1%89%D0%B8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Яндекс
+          </a>
+          <a
+            class="ghost-button map-link"
+            href="https://maps.apple.com/?q=%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B1%D0%B5%D1%80%D0%B5%D0%B3%2C%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%201%2F3%2C%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BE%D0%BA%D1%80%D1%83%D0%B3%20%D0%9C%D1%8B%D1%82%D0%B8%D1%89%D0%B8"
+            data-map-link
+            data-app-href="maps://?q=%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D1%8B%D0%B9%20%D0%B1%D0%B5%D1%80%D0%B5%D0%B3%2C%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%201%2F3%2C%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9%20%D0%BE%D0%BA%D1%80%D1%83%D0%B3%20%D0%9C%D1%8B%D1%82%D0%B8%D1%89%D0%B8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Apple
+          </a>
+        </div>
       </section>
 
       <section class="rsvp-section reveal" aria-labelledby="rsvp-title">
-        <p class="overline">RSVP</p>
         <h2 id="rsvp-title">Будете с нами?</h2>
         <p>
-          Подтвердите участие, чтобы мы могли красиво подготовить вечер и список гостей.
+          Подтвердите участие, чтобы мы могли<br />
+          красиво подготовить вечер и список<br />
+          гостей.
         </p>
         <button class="primary-button" type="button" data-open-rsvp>Я буду!</button>
       </section>
@@ -156,7 +271,6 @@
       <div class="modal-card">
         <button class="modal-close" type="button" aria-label="Закрыть" data-close-rsvp></button>
         <div class="modal-form-view" id="modalFormView">
-          <p class="overline">RSVP</p>
           <h2 id="modal-title">Подтвердите участие</h2>
           <p>
             Пожалуйста, укажите имя и фамилию, чтобы мы могли отметить вас в списке гостей.
