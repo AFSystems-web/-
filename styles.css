@@ -436,7 +436,7 @@ footer {
   isolation: isolate;
   z-index: 0;
   display: grid;
-  width: min(100%, 430px);
+  width: min(100%, 520px);
   margin: 0 auto;
   justify-items: center;
   color: var(--green);
@@ -453,14 +453,15 @@ footer {
   display: grid;
   box-sizing: border-box;
   place-items: center;
-  width: min(100vw - 24px, 470px);
+  width: min(100vw - 24px, 520px);
   margin: 0;
   padding: 0;
-  opacity: 1;
+  opacity: 0;
   clip-path: none;
   overflow: visible;
-  transform: none;
-  will-change: auto;
+  transform: translate3d(0, 16px, 0) scale(0.985);
+  transform-origin: 50% 50%;
+  will-change: opacity, transform;
 }
 
 .name-image {
@@ -474,11 +475,11 @@ footer {
 }
 
 .name-first {
-  left: 0;
+  left: -34px;
 }
 
 .name-second {
-  left: 0;
+  left: -42px;
 }
 
 .ampersand {
@@ -650,8 +651,16 @@ body.site-ready .hero-kicker {
   animation: softRise 680ms 1120ms ease-out forwards;
 }
 
+body.site-ready .name-first {
+  animation: nameAssetIn 880ms 1280ms cubic-bezier(0.18, 0.76, 0.24, 1) forwards;
+}
+
 body.site-ready .ampersand {
   animation: softRise 460ms 2060ms ease-out forwards;
+}
+
+body.site-ready .name-second {
+  animation: nameAssetIn 880ms 2320ms cubic-bezier(0.18, 0.76, 0.24, 1) forwards;
 }
 
 body.site-ready .date-lockup {
@@ -1199,6 +1208,13 @@ h2 {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes nameAssetIn {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
