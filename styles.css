@@ -254,136 +254,100 @@ body.site-ready .site-loader {
   object-fit: cover;
   object-position: center top;
   opacity: 0;
-  transform: scale(1.006);
+  transform: scale(1.012);
   filter: none;
 }
 
 .base-bg {
-  display: none;
   background: var(--ivory);
 }
 
 .floral-piece {
   z-index: 1;
-  --floral-opacity: 0.88;
+  --floral-opacity: 0.82;
   --floral-rest-transform: translate3d(0, 0, 0) scale(1);
-  --floral-float-transform: translate3d(0, -3px, 0) scale(1.004);
+  --floral-float-transform: translate3d(0, -2px, 0) scale(1.002);
   object-fit: cover;
   object-position: center top;
   opacity: 0;
-  filter: none;
+  filter: saturate(1.04) contrast(1.02);
   will-change: opacity, transform;
 }
 
-.floral-reference-frame {
-  --floral-opacity: 1;
-  --floral-rest-transform: translate3d(0, 0, 0) scale(1.006);
-  --floral-float-transform: translate3d(0, -3px, 0) scale(1.01);
-  z-index: 1;
-  object-fit: cover;
-  object-position: center top;
-  filter: saturate(1.04) contrast(1.02);
-  transform: translate3d(0, 8px, 0) scale(1.014);
-}
-
-.floral-top-left {
-  --floral-opacity: 0.9;
-  --floral-rest-transform: translate3d(-78px, -62px, 0) scale(1.04);
-  --floral-float-transform: translate3d(-78px, -65px, 0) scale(1.044);
-  object-position: left top;
-  clip-path: none;
-  -webkit-mask-image: radial-gradient(ellipse at 3% 2%, #000 0 33%, rgba(0, 0, 0, 0.62) 40%, transparent 50%);
-  mask-image: radial-gradient(ellipse at 3% 2%, #000 0 33%, rgba(0, 0, 0, 0.62) 40%, transparent 50%);
-  transform: translate3d(-98px, -74px, 0) scale(1.02);
-}
-
 .floral-left {
-  --floral-opacity: 0.86;
-  --floral-rest-transform: translate3d(-116px, 76px, 0) scale(1.02);
-  --floral-float-transform: translate3d(-116px, 79px, 0) scale(1.024);
+  --floral-opacity: 0.78;
+  --floral-rest-transform: translate3d(-112px, -58px, 0) scale(1.055);
+  --floral-float-transform: translate3d(-112px, -61px, 0) scale(1.058);
   object-position: left top;
-  clip-path: inset(14% 75% 23% 0);
-  -webkit-mask-image: linear-gradient(90deg, #000 0 22%, rgba(0, 0, 0, 0.68) 29%, transparent 37%);
-  mask-image: linear-gradient(90deg, #000 0 22%, rgba(0, 0, 0, 0.68) 29%, transparent 37%);
-  transform: translate3d(-136px, 92px, 0) scale(1);
+  transform: translate3d(-132px, -72px, 0) scale(1.035);
+}
+
+.floral-corner-left {
+  --floral-opacity: 0.74;
+  --floral-rest-transform: translate3d(-38px, -42px, 0) scale(1.02);
+  --floral-float-transform: translate3d(-38px, -45px, 0) scale(1.024);
+  object-position: left top;
+  transform: translate3d(-56px, -56px, 0) scale(1);
 }
 
 .floral-top-right {
-  --floral-opacity: 0.84;
-  --floral-rest-transform: translate3d(126px, -38px, 0) scale(0.98);
-  --floral-float-transform: translate3d(126px, -41px, 0) scale(0.984);
+  --floral-opacity: 0.72;
+  --floral-rest-transform: translate3d(146px, -140px, 0) scale(1.05);
+  --floral-float-transform: translate3d(146px, -143px, 0) scale(1.053);
   object-position: right top;
-  clip-path: none;
-  -webkit-mask-image: radial-gradient(ellipse at 102% 11%, #000 0 30%, rgba(0, 0, 0, 0.7) 39%, transparent 52%);
-  mask-image: radial-gradient(ellipse at 102% 11%, #000 0 30%, rgba(0, 0, 0, 0.7) 39%, transparent 52%);
-  transform: translate3d(146px, -52px, 0) scale(0.96);
+  transform: translate3d(166px, -154px, 0) scale(1.03);
 }
 
 .floral-right-big {
-  --floral-opacity: 0;
-  --floral-rest-transform: translate3d(62px, -26px, 0) scale(1);
-  --floral-float-transform: translate3d(62px, -23px, 0) scale(1.004);
+  --floral-opacity: 0.68;
+  --floral-rest-transform: translate3d(106px, 92px, 0) scale(1.04);
+  --floral-float-transform: translate3d(106px, 89px, 0) scale(1.043);
   object-position: right top;
-  clip-path: none;
-  -webkit-mask-image: radial-gradient(ellipse at 106% 52%, #000 0 22%, rgba(0, 0, 0, 0.58) 30%, transparent 39%);
-  mask-image: radial-gradient(ellipse at 106% 52%, #000 0 22%, rgba(0, 0, 0, 0.58) 30%, transparent 39%);
-  transform: translate3d(82px, -10px, 0) scale(0.98);
-  filter: saturate(1.14) contrast(1.08);
+  transform: translate3d(126px, 106px, 0) scale(1.02);
 }
 
 .floral-bottom-left {
-  --floral-opacity: 0.86;
-  --floral-rest-transform: translate3d(-76px, 104px, 0) scale(0.98);
-  --floral-float-transform: translate3d(-76px, 107px, 0) scale(0.984);
+  --floral-opacity: 0.78;
+  --floral-rest-transform: translate3d(-70px, 116px, 0) scale(1.02);
+  --floral-float-transform: translate3d(-70px, 113px, 0) scale(1.023);
   object-position: left top;
-  clip-path: none;
-  -webkit-mask-image: radial-gradient(ellipse at 13% 91%, #000 0 28%, rgba(0, 0, 0, 0.68) 36%, transparent 49%);
-  mask-image: radial-gradient(ellipse at 13% 91%, #000 0 28%, rgba(0, 0, 0, 0.68) 36%, transparent 49%);
-  transform: translate3d(-96px, 120px, 0) scale(0.96);
+  transform: translate3d(-88px, 130px, 0) scale(1);
 }
 
-.floral-bottom-right {
-  --floral-opacity: 0.74;
-  --floral-rest-transform: translate3d(44px, 72px, 0) scale(1);
-  --floral-float-transform: translate3d(44px, 69px, 0) scale(1.004);
+.floral-right-edge {
+  --floral-opacity: 0.6;
+  --floral-rest-transform: translate3d(86px, 98px, 0) scale(1.02);
+  --floral-float-transform: translate3d(86px, 95px, 0) scale(1.023);
   object-position: right top;
-  clip-path: none;
-  -webkit-mask-image: radial-gradient(ellipse at 99% 98%, #000 0 24%, rgba(0, 0, 0, 0.58) 34%, transparent 48%);
-  mask-image: radial-gradient(ellipse at 99% 98%, #000 0 24%, rgba(0, 0, 0, 0.58) 34%, transparent 48%);
-  transform: translate3d(64px, 88px, 0) scale(0.98);
-  filter: saturate(1.08) contrast(1.05);
+  transform: translate3d(104px, 112px, 0) scale(1);
 }
 
 body.site-ready .base-bg {
   animation: watercolorReveal 1050ms 80ms ease-out forwards;
 }
 
-body.site-ready .floral-reference-frame {
-  animation: floralLayerIn 900ms 260ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloat 8.8s 2450ms ease-in-out infinite alternate;
+body.site-ready .floral-left {
+  animation: floralLayerIn 880ms 240ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloat 9.8s 2240ms ease-in-out infinite alternate;
 }
 
-body.site-ready .floral-top-left {
-  animation: floralLayerIn 880ms 260ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloat 8s 2300ms ease-in-out infinite alternate;
+body.site-ready .floral-corner-left {
+  animation: floralLayerIn 880ms 320ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloat 10.2s 2320ms ease-in-out infinite alternate;
 }
 
 body.site-ready .floral-top-right {
-  animation: floralLayerIn 880ms 400ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloat 8.4s 2460ms ease-in-out infinite alternate;
-}
-
-body.site-ready .floral-left {
-  animation: floralLayerIn 880ms 540ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloat 8.8s 2620ms ease-in-out infinite alternate;
-}
-
-body.site-ready .floral-right-big {
-  animation: floralLayerIn 900ms 680ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloat 9s 2780ms ease-in-out infinite alternate;
+  animation: floralLayerIn 880ms 420ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloat 10s 2420ms ease-in-out infinite alternate;
 }
 
 body.site-ready .floral-bottom-left {
-  animation: floralLayerIn 900ms 820ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloat 8.6s 2940ms ease-in-out infinite alternate;
+  animation: floralLayerIn 900ms 520ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloat 10.4s 2520ms ease-in-out infinite alternate;
 }
 
-body.site-ready .floral-bottom-right {
-  animation: floralLayerIn 900ms 960ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloat 8.2s 3100ms ease-in-out infinite alternate;
+body.site-ready .floral-right-big {
+  animation: floralLayerIn 900ms 620ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloat 10.8s 2620ms ease-in-out infinite alternate;
+}
+
+body.site-ready .floral-right-edge {
+  animation: floralLayerIn 900ms 720ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards, floralFloat 11s 2720ms ease-in-out infinite alternate;
 }
 
 section,
@@ -397,7 +361,7 @@ footer {
   display: flex;
   min-height: 100svh;
   overflow: hidden;
-  padding: 54px 24px 74px;
+  padding: clamp(64px, 9svh, 82px) 22px clamp(86px, 12svh, 112px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -434,6 +398,7 @@ footer {
 .hero-content {
   position: relative;
   z-index: 5;
+  isolation: isolate;
   display: flex;
   width: min(100%, 390px);
   margin: 0 auto;
@@ -453,11 +418,13 @@ footer {
 }
 
 .hero-kicker {
-  margin-bottom: 42px;
+  max-width: 100%;
+  margin-bottom: clamp(28px, 5svh, 38px);
   color: #6f8b78;
-  font-size: clamp(13px, 3.4vw, 14px);
+  font-size: clamp(11.5px, 3.05vw, 13.5px);
   font-weight: 700;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.18em;
+  line-height: 1.55;
   opacity: 0;
 }
 
@@ -466,7 +433,7 @@ footer {
   isolation: isolate;
   z-index: 0;
   display: flex;
-  width: min(100%, 390px);
+  width: min(100%, 410px);
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
@@ -478,15 +445,6 @@ footer {
   overflow: visible;
 }
 
-.couple-names::before {
-  content: "";
-  position: absolute;
-  inset: -42px -120px -72px;
-  z-index: 1;
-  pointer-events: none;
-  background: radial-gradient(ellipse at 50% 52%, #faf5eb 0 72%, rgba(250, 245, 235, 0.94) 82%, transparent 94%);
-}
-
 .name-text {
   position: relative;
   z-index: 2;
@@ -494,35 +452,35 @@ footer {
   color: var(--green);
   font-family: var(--font-script);
   width: 100%;
-  font-size: clamp(96px, 27vw, 120px);
+  font-size: clamp(84px, 24.2vw, 116px);
   font-weight: 400;
   letter-spacing: 0;
-  line-height: 0.82;
+  line-height: 0.9;
   margin: 0;
-  padding: 0 0.08em 0.08em;
+  padding: 0 0.18em 0.12em;
   text-align: center;
   opacity: 0;
   transform: translateY(12px);
-  clip-path: inset(-0.18em 100% -0.24em -0.08em);
+  clip-path: inset(-0.36em 100% -0.34em -0.24em);
   will-change: opacity, transform, clip-path;
 }
 
 .name-first {
   margin: 0;
-  left: -30px;
+  left: -18px;
 }
 
 .name-second {
   margin: 0;
-  left: -26px;
+  left: -22px;
 }
 
 .ampersand {
   position: relative;
   z-index: 2;
   display: block;
-  margin: 18px 0 20px;
-  left: -2px;
+  margin: clamp(10px, 2.2svh, 16px) 0 clamp(12px, 2.4svh, 18px);
+  left: 0;
   color: #6f8b78;
   font-family: var(--font-serif);
   font-size: 38px;
@@ -534,7 +492,7 @@ footer {
 .date-lockup {
   display: flex;
   width: min(100%, 390px);
-  margin-top: 74px;
+  margin-top: clamp(44px, 7svh, 60px);
   flex-direction: column;
   align-items: center;
   color: var(--green);
@@ -545,20 +503,20 @@ footer {
 .date-month,
 .date-weekday {
   color: var(--green);
-  font-size: 28px;
+  font-size: clamp(24px, 6.8vw, 28px);
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
 }
 
 .date-month {
-  margin-bottom: 18px;
-  letter-spacing: 0.22em;
+  margin-bottom: clamp(12px, 2.4svh, 18px);
+  letter-spacing: 0.2em;
 }
 
 .date-weekday {
-  margin-top: 12px;
-  letter-spacing: 0.18em;
+  margin-top: clamp(8px, 1.8svh, 12px);
+  letter-spacing: 0.15em;
 }
 
 .date-number-row {
@@ -602,7 +560,7 @@ footer {
 
 .welcome-time {
   display: flex;
-  margin-top: 22px;
+  margin-top: clamp(14px, 2.8svh, 22px);
   flex-direction: column;
   align-items: center;
   gap: 8px;
@@ -1250,7 +1208,7 @@ h2 {
   to {
     opacity: 1;
     transform: translateY(0);
-    clip-path: inset(-0.18em -0.08em -0.24em -0.08em);
+    clip-path: inset(-0.36em -0.24em -0.34em -0.24em);
   }
 }
 
@@ -1279,7 +1237,7 @@ h2 {
 
 @media (max-width: 374px) {
   .hero-screen {
-    padding: 50px 18px 66px;
+    padding: 58px 18px 82px;
   }
 
   .couple-names {
@@ -1287,12 +1245,16 @@ h2 {
   }
 
   .hero-kicker {
-    font-size: 13px;
-    letter-spacing: 0.22em;
+    font-size: 11.5px;
+    letter-spacing: 0.15em;
+  }
+
+  .name-text {
+    font-size: clamp(76px, 23vw, 88px);
   }
 
   .date-lockup {
-    margin-top: 68px;
+    margin-top: 42px;
   }
 
   .date-month,
@@ -1327,8 +1289,8 @@ h2 {
 
 @media (max-width: 520px) and (max-height: 740px) {
   .hero-screen {
-    padding-top: 42px;
-    padding-bottom: 58px;
+    padding-top: 52px;
+    padding-bottom: 80px;
   }
 
   .couple-names {
@@ -1336,11 +1298,11 @@ h2 {
   }
 
   .hero-kicker {
-    margin-bottom: 30px;
+    margin-bottom: 24px;
   }
 
   .name-text {
-    font-size: clamp(70px, 19vw, 82px);
+    font-size: clamp(70px, 20vw, 82px);
   }
 
   .ampersand {
@@ -1349,7 +1311,7 @@ h2 {
   }
 
   .date-lockup {
-    margin-top: 48px;
+    margin-top: 34px;
   }
 
   .date-month,
@@ -1375,7 +1337,7 @@ h2 {
   }
 
   .welcome-time {
-    margin-top: 14px;
+    margin-top: 12px;
     gap: 6px;
   }
 
@@ -1384,7 +1346,7 @@ h2 {
   }
 
   .welcome-time span {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 
@@ -1428,7 +1390,7 @@ h2 {
   }
 
   .name-text {
-    clip-path: inset(-0.18em -0.08em -0.24em -0.08em);
+    clip-path: inset(-0.36em -0.24em -0.34em -0.24em);
   }
 
   .floral-piece {
