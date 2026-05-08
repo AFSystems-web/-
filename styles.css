@@ -4,8 +4,9 @@
     local("Anastasia Script"),
     local("AnastasiaScript"),
     local("AnastasiaScriptC"),
-    url("assets/fonts/AnastasiaScriptC.otf") format("opentype"),
-    url("assets/fonts/AnastasiaScript.ttf") format("truetype");
+    url("assets/fonts/AnastasiaScript.ttf") format("truetype"),
+    url("assets/fonts/AnastasiaScript.woff") format("woff"),
+    url("assets/fonts/AnastasiaScriptC.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -449,34 +450,35 @@ footer {
 .name-text {
   position: relative;
   z-index: 2;
-  display: block;
+  display: grid;
   box-sizing: border-box;
-  color: var(--green);
-  font-family: var(--font-script);
-  width: calc(100% + 72px);
-  max-width: calc(100vw - 12px);
-  font-size: clamp(78px, 22.5vw, 108px);
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.18;
-  margin: -0.28em 0 -0.34em;
-  padding: 0.28em 0.42em 0.34em;
-  text-align: center;
-  opacity: 0;
+  place-items: center;
+  width: min(100vw - 24px, 470px);
+  margin: 0;
+  padding: 0;
+  opacity: 1;
   clip-path: none;
   overflow: visible;
-  transform: translateY(10px);
-  will-change: opacity, transform;
+  transform: none;
+  will-change: auto;
+}
+
+.name-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  overflow: visible;
+  pointer-events: none;
+  user-select: none;
 }
 
 .name-first {
-  margin: 0;
-  left: -18px;
+  left: 0;
 }
 
 .name-second {
-  margin: 0;
-  left: -22px;
+  left: 0;
 }
 
 .ampersand {
@@ -648,16 +650,8 @@ body.site-ready .hero-kicker {
   animation: softRise 680ms 1120ms ease-out forwards;
 }
 
-body.site-ready .name-first {
-  animation: writeName 900ms 1280ms cubic-bezier(0.22, 0.78, 0.2, 1) forwards;
-}
-
 body.site-ready .ampersand {
   animation: softRise 460ms 2060ms ease-out forwards;
-}
-
-body.site-ready .name-second {
-  animation: writeName 900ms 2320ms cubic-bezier(0.22, 0.78, 0.2, 1) forwards;
 }
 
 body.site-ready .date-lockup {
@@ -1208,13 +1202,6 @@ h2 {
   }
 }
 
-@keyframes writeName {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes nameGlimmer {
   0%,
   100% {
@@ -1253,7 +1240,7 @@ h2 {
   }
 
   .name-text {
-    font-size: clamp(76px, 23vw, 88px);
+    width: min(100vw - 18px, 390px);
   }
 
   .date-lockup {
@@ -1305,7 +1292,7 @@ h2 {
   }
 
   .name-text {
-    font-size: clamp(70px, 20vw, 82px);
+    width: min(100vw - 18px, 370px);
   }
 
   .ampersand {
