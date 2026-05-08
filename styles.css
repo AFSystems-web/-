@@ -214,7 +214,8 @@ body.site-ready .site-loader {
   position: absolute;
   inset: 0 0 auto;
   z-index: 0;
-  height: 100svh;
+  height: 100vh;
+  height: 100lvh;
   min-height: 640px;
   overflow: hidden;
   pointer-events: none;
@@ -359,7 +360,8 @@ footer {
 .hero-screen {
   position: relative;
   display: flex;
-  min-height: 100svh;
+  min-height: 100vh;
+  min-height: 100lvh;
   overflow: hidden;
   padding: clamp(64px, 9svh, 82px) 22px clamp(86px, 12svh, 112px);
   flex-direction: column;
