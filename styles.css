@@ -14,6 +14,7 @@
 
 :root {
   color-scheme: light;
+  --stable-hero-height: 100vh;
   --ivory: #faf5eb;
   --ivory-soft: #f8f3e8;
   --paper: rgba(250, 245, 235, 0.76);
@@ -158,8 +159,7 @@ body.site-ready .site-loader {
   position: absolute;
   inset: 0 0 auto;
   z-index: 0;
-  height: 100vh;
-  height: 100lvh;
+  height: var(--stable-hero-height);
   min-height: 640px;
   overflow: hidden;
   pointer-events: none;
@@ -336,10 +336,9 @@ footer {
 .hero-screen {
   position: relative;
   display: flex;
-  min-height: 100vh;
-  min-height: 100lvh;
+  min-height: var(--stable-hero-height);
   overflow: hidden;
-  padding: clamp(64px, 9svh, 82px) 22px clamp(86px, 12svh, 112px);
+  padding: clamp(64px, 16vw, 82px) 22px clamp(86px, 20vw, 112px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -398,7 +397,7 @@ footer {
 
 .hero-kicker {
   max-width: 100%;
-  margin-bottom: clamp(12px, 2.8svh, 22px);
+  margin-bottom: clamp(12px, 5vw, 22px);
   padding-left: 0.18em;
   color: #6f8b78;
   font-size: clamp(10.5px, 2.85vw, 12.5px);
@@ -464,21 +463,21 @@ footer {
 
 .name-first {
   left: 0;
-  margin-bottom: clamp(-54px, -7svh, -36px);
+  margin-bottom: clamp(-54px, -9vw, -36px);
 }
 
 .name-second {
   left: 0;
-  margin-bottom: clamp(-54px, -7svh, -36px);
+  margin-bottom: clamp(-54px, -9vw, -36px);
 }
 
 .ampersand {
   position: relative;
   z-index: 2;
   display: block;
-  margin: clamp(-20px, -2.6svh, -12px) 0 clamp(-18px, -2.2svh, -10px);
+  margin: clamp(-20px, -4vw, -12px) 0 clamp(-18px, -3.6vw, -10px);
   left: 0;
-  translate: var(--name-optical-offset) clamp(24px, 3.2svh, 32px);
+  translate: var(--name-optical-offset) clamp(24px, 6vw, 32px);
   color: #6f8b78;
   font-family: var(--font-sans);
   font-size: clamp(24px, 5.8vw, 30px);
@@ -490,7 +489,7 @@ footer {
 .date-lockup {
   display: flex;
   width: min(100%, 330px);
-  margin-top: clamp(18px, 4svh, 34px);
+  margin-top: clamp(18px, 7vw, 34px);
   flex-direction: column;
   align-items: center;
   color: var(--green);
@@ -508,13 +507,13 @@ footer {
 }
 
 .date-month {
-  margin-bottom: clamp(8px, 1.8svh, 12px);
+  margin-bottom: clamp(8px, 2.8vw, 12px);
   padding-left: 0.2em;
   letter-spacing: 0.2em;
 }
 
 .date-weekday {
-  margin-top: clamp(4px, 1.2svh, 8px);
+  margin-top: clamp(4px, 2vw, 8px);
   padding-left: 0.15em;
   letter-spacing: 0.15em;
 }
@@ -560,7 +559,7 @@ footer {
 
 .welcome-time {
   display: flex;
-  margin-top: clamp(8px, 1.8svh, 14px);
+  margin-top: clamp(8px, 2.8vw, 14px);
   flex-direction: column;
   align-items: center;
   gap: 8px;
@@ -1360,7 +1359,7 @@ h2 {
 
   .date-month,
   .date-weekday {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .date-month {

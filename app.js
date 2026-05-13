@@ -13,6 +13,22 @@ const loaderMinimumMs = 2150;
 const loaderMaximumMs = 3000;
 const loaderStartedAt = Date.now();
 let loaderFinished = false;
+let stableViewportWidth = window.innerWidth;
+
+setStableHeroHeight();
+
+window.addEventListener("orientationchange", () => {
+  window.setTimeout(() => {
+    stableViewportWidth = window.innerWidth;
+    setStableHeroHeight();
+  }, 180);
+});
+
+window.addEventListener("resize", () => {
+  if (Math.abs(window.innerWidth - stableViewportWidth) < 24) return;
+  stableViewportWidth = window.innerWidth;
+  setStableHeroHeight();
+});
 
 window.addEventListener("load", () => {
   schedulePreloaderFinish();
@@ -31,6 +47,10 @@ function finishPreloader() {
   window.clearTimeout(loaderFallbackTimer);
   body.classList.remove("is-loading");
   body.classList.add("site-ready");
+}
+
+function setStableHeroHeight() {
+  document.documentElement.style.setProperty("--stable-hero-height", `${window.innerHeight}px`);
 }
 
 if ("IntersectionObserver" in window) {
