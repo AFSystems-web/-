@@ -178,9 +178,9 @@ body.site-ready .site-loader {
 .loader-couple {
   margin: 0.5rem 0 0;
   color: var(--green);
-  font-family: var(--font-serif);
+  font-family: var(--font-script);
   font-size: clamp(4.35rem, 19vw, 5.4rem);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 0.9;
   opacity: 0;
   transform: translateY(8px) scale(0.98);
@@ -223,15 +223,31 @@ body.site-ready .site-loader {
   background: #faf5eb;
 }
 
+.watercolor-frame::before,
 .watercolor-frame::after {
   content: "";
   position: absolute;
   right: 0;
-  bottom: -1px;
   left: 0;
-  z-index: 3;
-  height: 120px;
   pointer-events: none;
+}
+
+.watercolor-frame::before {
+  top: 18%;
+  bottom: 8%;
+  z-index: 3;
+  background: radial-gradient(
+    ellipse at 50% 52%,
+    rgba(250, 245, 235, 0.8) 0 28%,
+    rgba(250, 245, 235, 0.5) 42%,
+    rgba(250, 245, 235, 0) 68%
+  );
+}
+
+.watercolor-frame::after {
+  bottom: -1px;
+  z-index: 4;
+  height: 120px;
   background: linear-gradient(
     to bottom,
     rgba(250, 245, 235, 0) 0%,
@@ -242,6 +258,7 @@ body.site-ready .site-loader {
 }
 
 .hero-bg,
+.hero-frame-art,
 .floral-piece {
   position: absolute;
   inset: 0;
@@ -262,6 +279,17 @@ body.site-ready .site-loader {
 
 .base-bg {
   background: var(--ivory);
+}
+
+.hero-frame-art {
+  z-index: 2;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0;
+  filter: saturate(1.08) contrast(1.04) brightness(1.02);
+  transform: scale(1.01);
+  transform-origin: center top;
+  will-change: opacity, transform;
 }
 
 .floral-piece {
@@ -326,6 +354,10 @@ body.site-ready .site-loader {
 
 body.site-ready .base-bg {
   animation: watercolorReveal 1050ms 80ms ease-out forwards;
+}
+
+body.site-ready .hero-frame-art {
+  animation: frameArtReveal 1050ms 220ms ease-out forwards;
 }
 
 body.site-ready .floral-left {
@@ -501,12 +533,13 @@ footer {
   position: relative;
   z-index: 2;
   display: block;
-  margin: 0 0 clamp(-16px, -2svh, -8px);
+  margin: clamp(-20px, -2.6svh, -12px) 0 clamp(-18px, -2.2svh, -10px);
   left: 0;
+  translate: var(--name-optical-offset) clamp(24px, 3.2svh, 32px);
   color: #6f8b78;
-  font-family: var(--font-serif);
-  font-size: clamp(29px, 7vw, 34px);
-  font-weight: 500;
+  font-family: var(--font-sans);
+  font-size: clamp(24px, 5.8vw, 30px);
+  font-weight: 400;
   line-height: 1;
   opacity: 0;
 }
@@ -670,7 +703,7 @@ body.site-ready .hero-kicker {
 }
 
 body.site-ready .name-first .name-image {
-  animation: nameWrite 1120ms 1280ms cubic-bezier(0.32, 0, 0.12, 1) forwards;
+  animation: nameWrite 1500ms 1280ms cubic-bezier(0.32, 0, 0.12, 1) forwards;
 }
 
 body.site-ready .ampersand {
@@ -678,7 +711,7 @@ body.site-ready .ampersand {
 }
 
 body.site-ready .name-second .name-image {
-  animation: nameWrite 1120ms 2320ms cubic-bezier(0.32, 0, 0.12, 1) forwards;
+  animation: nameWrite 1500ms 2320ms cubic-bezier(0.32, 0, 0.12, 1) forwards;
 }
 
 body.site-ready .date-lockup {
@@ -687,6 +720,28 @@ body.site-ready .date-lockup {
 
 body.site-ready .welcome-time {
   animation: softRise 680ms 3360ms ease-out forwards;
+}
+
+.greeting-section {
+  padding: clamp(3rem, 12vw, 4.75rem) 1.35rem 0;
+  background: #faf5eb;
+  text-align: center;
+}
+
+.greeting-section p {
+  max-width: 22rem;
+  margin: 0 auto;
+  color: var(--green);
+  font-family: var(--font-serif);
+  font-size: clamp(1.28rem, 5vw, 1.68rem);
+  font-weight: 500;
+  line-height: 1.42;
+}
+
+.greeting-section span {
+  display: block;
+  margin-top: 1.05rem;
+  color: var(--green-soft);
 }
 
 .schedule-section,
@@ -891,7 +946,7 @@ h2 {
 
 .dress-palette {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.42rem;
   width: min(100%, 18rem);
   margin: 1.35rem auto 0;
@@ -1203,6 +1258,13 @@ h2 {
   }
 }
 
+@keyframes frameArtReveal {
+  to {
+    opacity: 0.94;
+    transform: scale(1);
+  }
+}
+
 @keyframes floralLayerIn {
   to {
     opacity: var(--floral-opacity);
@@ -1344,8 +1406,8 @@ h2 {
   }
 
   .ampersand {
-    margin: 0 0 -10px;
-    font-size: 29px;
+    margin: -12px 0 -10px;
+    font-size: 24px;
   }
 
   .date-lockup {
@@ -1416,6 +1478,7 @@ h2 {
   }
 
   .base-bg,
+  .hero-frame-art,
   .floral-piece,
   .hero-kicker,
   .name-text,
@@ -1441,5 +1504,9 @@ h2 {
 
   .floral-piece {
     opacity: var(--floral-opacity);
+  }
+
+  .hero-frame-art {
+    opacity: 0.94;
   }
 }
