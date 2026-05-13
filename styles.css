@@ -40,6 +40,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -98,24 +100,7 @@ svg {
 
 .site-loader::before,
 .site-loader::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.site-loader::before {
-  opacity: 0.18;
-  background-image:
-    linear-gradient(rgba(81, 67, 48, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(81, 67, 48, 0.025) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-
-.site-loader::after {
-  background:
-    radial-gradient(circle at 50% 44%, rgba(112, 136, 114, 0.1), transparent 11rem),
-    radial-gradient(circle at 50% 56%, rgba(199, 146, 58, 0.09), transparent 13rem);
+  content: none;
 }
 
 body.site-ready .site-loader {
@@ -129,74 +114,32 @@ body.site-ready .site-loader {
   z-index: 1;
   display: grid;
   justify-items: center;
-  width: min(100%, 20rem);
-  padding: 1.4rem 1rem;
+  width: 7rem;
+  height: 7rem;
+  padding: 0;
+  place-items: center;
   text-align: center;
   transform: translateY(0);
-  animation: loaderIn 760ms cubic-bezier(0.2, 0.85, 0.2, 1) forwards;
+  animation: flowerBreathe 1400ms ease-in-out infinite;
 }
 
-.preloader-botanical {
-  width: 13.4rem;
-  height: auto;
-  color: var(--gold);
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.preloader-flower {
+  width: 4.7rem;
+  height: 4.7rem;
+  overflow: visible;
 }
 
-.loader-branch {
-  stroke-width: 1.25;
-  stroke-dasharray: 190;
-  stroke-dashoffset: 190;
-  animation: loaderBranchDraw 860ms 180ms ease-out forwards;
+.flower-petal {
+  fill: rgba(255, 252, 244, 0.94);
+  stroke: rgba(111, 139, 120, 0.42);
+  stroke-width: 1.15;
+  animation: flowerPetalBloom 900ms ease-out both;
 }
 
-.loader-leaf {
-  fill: rgba(112, 136, 114, 0.34);
-  stroke: rgba(51, 67, 50, 0.58);
-  stroke-width: 0.9;
-  opacity: 0;
-  transform: scale(0.84);
-  transform-origin: center;
-  animation: loaderLeafBloom 520ms ease-out forwards;
-}
-
-.loader-leaf-one {
-  animation-delay: 560ms;
-}
-
-.loader-leaf-two {
-  animation-delay: 720ms;
-}
-
-.loader-leaf-three {
-  animation-delay: 880ms;
-}
-
-.loader-couple {
-  margin: 0.5rem 0 0;
-  color: var(--green);
-  font-family: var(--font-script);
-  font-size: clamp(4.35rem, 19vw, 5.4rem);
-  font-weight: 400;
-  line-height: 0.9;
-  opacity: 0;
-  transform: translateY(8px) scale(0.98);
-  animation: loaderTextIn 620ms 1120ms ease-out forwards;
-}
-
-.loader-caption {
-  margin: 0.45rem 0 0;
-  color: var(--muted);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  opacity: 0;
-  transform: translateY(6px);
-  animation: loaderTextIn 560ms 1360ms ease-out forwards;
+.flower-center {
+  fill: rgba(198, 148, 58, 0.84);
+  stroke: rgba(134, 91, 31, 0.2);
+  stroke-width: 1.2;
 }
 
 .invitation-shell {
@@ -546,7 +489,7 @@ footer {
 
 .date-lockup {
   display: flex;
-  width: min(100%, 390px);
+  width: min(100%, 330px);
   margin-top: clamp(18px, 4svh, 34px);
   flex-direction: column;
   align-items: center;
@@ -558,7 +501,7 @@ footer {
 .date-month,
 .date-weekday {
   color: var(--green);
-  font-size: clamp(20px, 5.7vw, 24px);
+  font-size: clamp(17px, 4.8vw, 20px);
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
@@ -578,10 +521,10 @@ footer {
 
 .date-number-row {
   display: grid;
-  grid-template-columns: 36px 62px 36px;
+  grid-template-columns: 30px 54px 30px;
   align-items: center;
   justify-content: center;
-  column-gap: 30px;
+  column-gap: 24px;
   width: max-content;
   margin: 0 auto;
   line-height: 1;
@@ -592,16 +535,16 @@ footer {
   align-items: center;
   justify-content: center;
   place-items: center;
-  width: 62px;
-  height: 66px;
+  width: 54px;
+  height: 58px;
   color: var(--green-soft);
   font-family: var(--font-serif);
-  font-size: clamp(74px, 19vw, 88px);
+  font-size: clamp(60px, 15.8vw, 74px);
   font-weight: 400;
   font-variant-numeric: lining-nums;
   font-feature-settings: "lnum" 1, "onum" 0;
   line-height: 0.76;
-  min-width: 62px;
+  min-width: 54px;
   margin: 0;
   transform: none;
 }
@@ -609,7 +552,7 @@ footer {
 .date-line {
   display: block;
   width: 2px;
-  height: 66px;
+  height: 54px;
   border-radius: 999px;
   background: var(--gold);
   justify-self: center;
@@ -1231,23 +1174,24 @@ h2 {
   }
 }
 
-@keyframes loaderBranchDraw {
-  to {
-    stroke-dashoffset: 0;
+@keyframes flowerBreathe {
+  0%,
+  100% {
+    transform: scale(0.98);
+  }
+
+  50% {
+    transform: scale(1.04);
   }
 }
 
-@keyframes loaderLeafBloom {
-  to {
-    opacity: 1;
-    transform: scale(1);
+@keyframes flowerPetalBloom {
+  from {
+    opacity: 0;
   }
-}
 
-@keyframes loaderTextIn {
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
   }
 }
 
@@ -1359,7 +1303,7 @@ h2 {
 
   .date-month,
   .date-weekday {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .date-number-row {
@@ -1424,16 +1368,16 @@ h2 {
   }
 
   .date-number-row {
-    column-gap: 24px;
-    grid-template-columns: 32px auto 32px;
+    column-gap: 20px;
+    grid-template-columns: 28px auto 28px;
   }
 
   .date-number {
-    font-size: 68px;
+    font-size: 58px;
   }
 
   .date-line {
-    height: 56px;
+    height: 48px;
   }
 
   .welcome-time {
