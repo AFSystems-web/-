@@ -104,6 +104,7 @@ rsvpForm?.addEventListener("submit", async (event) => {
     firstName: String(formData.get("firstName") || "").trim(),
     lastName: String(formData.get("lastName") || "").trim(),
     guestsCount: String(formData.get("guestsCount") || "").trim(),
+    guestsNames: String(formData.get("guestsNames") || "").trim(),
     comment: String(formData.get("comment") || "").trim(),
     createdAt: new Date().toISOString(),
   };
@@ -191,18 +192,14 @@ async function sendRsvp(payload) {
     return;
   }
 
-  // If Google Apps Script blocks CORS in your deployment, see RSVP_SETUP.md for the iframe fallback option.
-  const response = await fetch(RSVP_ENDPOINT, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
+  const body = new URLSearchParams(payload);
 
-  if (!response.ok) {
-    throw new Error("RSVP request failed");
-  }
+  await fetch(RSVP_ENDPOINT, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+    body,
+  });
 }
 
 function showRsvpSuccess() {

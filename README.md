@@ -8,8 +8,8 @@ Mobile-first digital wedding invitation для Насти и Паши.
 - Акварельный botanical background из локального оптимизированного asset.
 - Hero screen с именами, датой, днем недели и CTA.
 - Красивый свадебный таймлайн.
-- Собственная RSVP-модалка без перехода на Google Form.
-- Demo-mode для RSVP, пока Google Apps Script endpoint не подключен.
+- Собственная RSVP-модалка без перехода во внешние формы.
+- Demo-mode для RSVP, пока Telegram endpoint через Google Apps Script не подключен.
 - Поддержка `prefers-reduced-motion`.
 
 ## Запуск локально
@@ -26,4 +26,4 @@ http://localhost:5173
 
 ## Подключение RSVP
 
-Инструкция для Google Sheets лежит в [RSVP_SETUP.md](./RSVP_SETUP.md).
+Инструкция для Telegram-уведомлений лежит в [RSVP_SETUP.md](./RSVP_SETUP.md).
